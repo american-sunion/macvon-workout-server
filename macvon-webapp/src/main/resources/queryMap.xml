@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap>
+	<dao className="UserDAO">
+		<query id="findLastesActivetUserLogin">
+			<![CDATA[
+	            from Login l where l.userId=?1 and l.logoutTime IS NULL and l.loginTime <= ?2 order by l.loginTime desc
+			]]>
+			
+		</query> 
+		<query id="findLastestUserLogin">
+			<![CDATA[
+	            from Login l where l.userId=?1 order by l.loginTime desc
+			]]>
+			
+		</query> 		
+		<query id="findLastestNUserLogin">
+			<![CDATA[
+	            from Login l where l.userId=?1 order by l.loginTime desc
+			]]>
+			
+		</query>
+	</dao>
+</sqlMap>
